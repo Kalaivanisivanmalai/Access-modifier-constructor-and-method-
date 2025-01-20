@@ -1,0 +1,49 @@
+# Access-modifier-constructor-and-method-
+coding:
+class Student {
+    private String name;
+    private int rollNumber;
+    private double marks;
+    public Student(String name, int rollNumber, double marks) {
+        this.name = name; 
+        this.rollNumber = rollNumber;
+        this.marks = marks;
+    }
+    public void setMarks(double marks) {
+        if (marks >= 0 && marks <= 100) {
+            this.marks = marks;
+        } else {
+            System.out.println("Invalid marks! Marks should be between 0 and 100.");
+        }
+    }
+    public double getMarks() {
+        return marks;
+    }
+    public void displayStudentDetails() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Marks: " + marks);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student student1 = new Student("John Doe", 101, 85.5);
+student1.displayStudentDetails();
+        student1.setMarks(90.0);
+        System.out.println("\nUpdated Student Details:");
+  student1.displayStudentDetails();
+        student1.setMarks(150.0);
+    }
+}
+
+output:
+Student Name: John Doe
+Roll Number: 101
+Marks: 85.5
+
+Updated Student Details:
+Student Name: John Doe
+Roll Number: 101
+Marks: 90.0
+
+Invalid marks! Marks should be between 0 and 100.
